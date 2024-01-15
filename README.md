@@ -38,6 +38,14 @@ Model evaluation will be twofold:
 
 TBD
 
+## Baselines
+
+See [./examples/random_baseline.py](./examples/random_baseline.py) for a very
+simple (and useless) baseline that always answers with the first choice. This
+script contains code to load the dataset and to generate a sample prompt. Use
+it to get the idea behind the data structure and automated evaluation.
+
+
 ## Publication
 
 Participants in the shared task are invited to submit a paper to the UNLP 2024 workshop. Please see the [UNLP website](https://unlp.org.ua/) for details. Accepted papers will appear in the ACL anthology and will be presented at a session of UNLP 2024 specially dedicated to the Shared Task.
