@@ -20,7 +20,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Answer:
+class Choice:
     marker: str
     text: str
     group: str   # Unused for now
@@ -29,9 +29,18 @@ class Answer:
 @dataclass
 class Task:
     question: str
-    answers: list[Answer]
+    choices: list[Choice]
     correct_answers: list[str]
     source: str
+
+    @staticmethod
+    def from_dict(data: dict) -> "Task":
+        return Task(
+            question=data["question"],
+            choices=[Choice(**choice) for choice in data["choices"]],
+            correct_answers=data["correct_answers"],
+            source=data["source"],
+        )
 
 
 def predict(dataset: list[Task], *, verbose=True) -> list[str]:
@@ -68,7 +77,7 @@ def make_prompt(task: Task) -> str:
         {extra_instructions}
     """
     )
-    choices = format_choices(task.answers)
+    choices = format_choices(task.choices)
     extra_instructions = format_extra_instructions(task)
     prompt = prompt_template.format(
         question=task.question,
@@ -78,7 +87,7 @@ def make_prompt(task: Task) -> str:
     return prompt
 
 
-def format_choices(choices: list[Answer]) -> str:
+def format_choices(choices: list[Choice]) -> str:
     result = ""
     for choice in choices:
         result += f"{choice.marker}. {choice.text}\n"
@@ -88,9 +97,9 @@ def format_choices(choices: list[Answer]) -> str:
 def format_extra_instructions(task: Task) -> str:
     if len(task.correct_answers) == 1:
         # Single-choice question is the only possible type right now
-        if task.answers:
+        if task.choices:
             # For example, " (А-Г)"
-            range_hint = f" ({task.answers[0].marker}-{task.answers[-1].marker})"
+            range_hint = f" ({task.choices[0].marker}-{task.choices[-1].marker})"
         else:
             range_hint = ""
         instructions = f"Вкажіть правильну відповідь{range_hint}."
@@ -136,8 +145,7 @@ def load_dataset(path: str) -> list[Task]:
     dataset = []
     with open(path) as f:
         for line in f:
-            task = Task(**json.loads(line))
-            task.answers = [Answer(**answer) for answer in task.answers]
+            task = Task.from_dict(json.loads(line))
             dataset.append(task)
     return dataset
 
