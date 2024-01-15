@@ -22,7 +22,7 @@ For an easy start with the competition, consider this guide on fine-tuning with 
 To ensure fair competition with reproducible results, please adhere to the following limitations:
 
 1. Only LLMs with open weights such as Llama-2, Mistral, Phi-2, etc. are allowed for the shared task.
-2. The model should be able to run on GPU with 16GB VRAM and CUDA compute capacity 8.6. Some examples of suitable GPUs include NVIDIA GeForce RTX 3080/4090, RTX A4000, and A2.
+2. The model should be able to run on GPU with 16GB VRAM and CUDA compute capacity 8.6. Some examples of suitable GPUs include NVIDIA GeForce RTX 3080/4090, RTX A4000, and A2. You are not limited in the type and amount of compute that you use for training.
 3. The weights of the final model should be published on [the Hugging Face Hub](https://huggingface.co/) or a similar open platform.
 4. The data from the Ukrainian External Independent Evaluation (EIE) cannot be used for instruction tuning.
 
