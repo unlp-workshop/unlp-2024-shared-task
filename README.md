@@ -30,9 +30,9 @@ To ensure fair competition with reproducible results, please adhere to the follo
 
 Model evaluation will be twofold:
 
-* Automated evaluation —  the **accuracy** of the model's answers to multiple-choice questions. The questions are based on the Ukrainian External Independent Evaluation tasks related to the topics of Ukrainian history, language, and literature. Please find sample questions in sample.jsonl. 
+* Automated evaluation — the **accuracy** of the model's answers to multiple-choice questions. The questions are based on the Ukrainian External Independent Evaluation tasks related to the topics of Ukrainian history, language, and literature. Please find sample questions in [llm-for-ua-sample.jsonl](data/llm-for-ua-sample.jsonl).
 
-* Human evaluation —  **manual ratings** of text generation tasks, like text summarization, short story and poem generation, adding explanations to sample text, free chat.
+* Human evaluation — **manual ratings** of text generation tasks, like text summarization, short story and poem generation, adding explanations to sample text, free chat.
 
 ## Submission
 
