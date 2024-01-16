@@ -56,13 +56,13 @@ Evaluation
 
 Model evaluation will be twofold:
 
--   Automated evaluation --- the **accuracy** of the model's answers to
+-   Automated evaluation — the **accuracy** of the model's answers to
     multiple-choice questions. The questions are based on the Ukrainian
     External Independent Evaluation tasks related to the topics of
     Ukrainian history, language, and literature. Please find sample
     questions in [llm-for-ua-sample.jsonl](data/llm-for-ua-sample.jsonl).
 
--   Human evaluation --- **manual ratings** of text generation tasks,
+-   Human evaluation — **manual ratings** of text generation tasks,
     like text summarization, short story and poem generation, adding
     explanations to sample text, free chat.
 
@@ -74,7 +74,7 @@ TBD
 Baselines
 ---------
 
-See [./examples/random\_baseline.py](./examples/random_baseline.py) for
+See [./examples/random_baseline.py](./examples/random_baseline.py) for
 a very simple (and useless) baseline that always answers with the first
 choice. This script contains code to load the dataset and to generate a
 sample prompt. Use it to get the idea behind the data structure and
@@ -95,15 +95,15 @@ Task.
 Important Dates
 ---------------
 
-January 15, 2024 --- Shared task announcement\
-February 15, 2024 --- Release of test data to registered participants\
-February 22, 2024 --- Registration deadline\
-February 23, 2024 --- Submission of system responses\
-March 1, 2024 --- Shared Task paper due\
-March 7, 2024 --- Results of the Shared Task announced\
-March 29, 2024 --- Notification of acceptance\
-TBD (mid-April) --- Camera-ready Shared Task papers due\
-May 25, 2024 --- Workshop date
+January 15, 2024 — Shared task announcement\
+February 15, 2024 — Release of test data to registered participants\
+February 22, 2024 — Registration deadline\
+February 23, 2024 — Submission of system responses\
+March 1, 2024 — Shared Task paper due\
+March 7, 2024 — Results of the Shared Task announced\
+March 29, 2024 — Notification of acceptance\
+TBD (mid-April) — Camera-ready Shared Task papers due\
+May 25, 2024 — Workshop date
 
 Contacts
 --------
