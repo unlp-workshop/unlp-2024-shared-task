@@ -18,6 +18,8 @@ Updates
 **2024-02-12**:
 
 * Update important dates.
+* Release training data for [exam questions](./data/zno.train.jsonl).
+* Release sample [open questions](./data/open-questions.train.jsonl).
 
 Task description
 ----------------
@@ -41,6 +43,76 @@ fine-tuning with Llama 2 using QLoRA:
 
 * https://www.kaggle.com/code/philculliton/fine-tuning-with-llama-2-qlora
 
+
+Datasets
+--------
+
+We provide two datasets that you can use for tuning your models.
+We will evaluate your models on a hidden set of similar data.
+
+## 1. Exam questions
+
+Data location: [`./data/zno.train.jsonl`](./data/zno.train.jsonl) or
+https://huggingface.co/datasets/osyvokon/zno
+
+This dataset contains machine-readable questions and answers from Ukrainian
+External independent testing (called _ЗНО_/_ZNO_ in Ukrainian).
+
+Question subjects are:
+
+- History of Ukraine
+- Ukrainian language and literature
+
+A training set contains 3063 question/answers. We will release a test set soon.
+
+Every line in a .jsonl file contains a structure like this:
+
+```js
+{
+  "question": "На другий склад падає наголос у слові",
+  "answers": [
+    { "marker": "А", "text": "начинка" },
+    { "marker": "Б", "text": "випадок" },
+    { "marker": "В", "text": "дрова" },
+    { "marker": "Г", "text": "загадка" },
+    { "marker": "Д", "text": "русло" }
+  ],
+  "correct_answers": ["Д"],
+  "subject": "ukrainian-language-and-literature"
+}
+```
+
+Currently, all questions have exactly one correct answer (`correct_answers[0]`).
+
+
+### 2. Open questions
+
+Data location: [`./data/open-questions.train.jsonl`](./data/open-questions.train.jsonl).
+
+This set of instruction prompts ask to perform a text generation tasks,
+like text summarization, short story and poem generation, adding
+explanations to sample text, question answering, and so on.
+questions will contain references to the history, culture, literature,
+music, and geography of Ukraine, as well as cover multiple genres of
+writing.
+
+Those questions don't have a single correct answer. They will be
+used for manual side-by-side comparison of model outputs.
+
+A sample record from a provided JSON lines file:
+
+```json
+{
+  "instruction": "Розкажи сюжет казки \"Котик і Півник\".",
+  "input": "",
+  "output": ""
+}
+```
+
+`input` and `output` are currently empty and are provided for compatibility
+with the Alpaca dataset format.
+
+
 Limitations
 -----------
 
@@ -60,14 +132,15 @@ the following limitations:
     - The model weights and activations should fit and stay in GPU memory
       entirely. CPU memory and disk offloading is not allowed.
 
-    - You can use external storage for retrieval-augemented generation and
+    - You can use external storage for retrieval-augmented generation and
       other non-parametric methods.
 
 3.  The weights of the final model should be published on [the Hugging
     Face Hub](https://huggingface.co/) or a similar open platform.
 
-4.  The data from the Ukrainian External Independent Evaluation (EIE)
-    cannot be used for instruction tuning.
+4.  If you're going to train on Ukrainian External Independent Evaluation ("ЗНО")
+    data, use [the provided data](./data/zno.train.jsonl) to avoid
+    test set contamination.
 
 
 Evaluation
@@ -78,8 +151,12 @@ Model evaluation will be twofold:
 -   Automated evaluation — the **accuracy** of the model's answers to
     multiple-choice questions. The questions are based on the Ukrainian
     External Independent Evaluation tasks related to the topics of
-    Ukrainian history, language, and literature. Please find sample
-    questions in [llm-for-ua-sample.jsonl](data/llm-for-ua-sample.jsonl).
+    Ukrainian history, language, and literature.
+
+    We provide a sample of data that you can use for training and
+    validating your model: [./data/zno.train.jsonl](./data/zno.train.jsonl).
+
+    The test data is to be released on February 16, 2024.
 
 -   Human evaluation — **manual evaluation** of text generation tasks,
     like text summarization, short story and poem generation, adding
@@ -88,6 +165,12 @@ Model evaluation will be twofold:
     music, and geography of Ukraine, as well as cover multiple genres of
     writing. The evaluation will be organized as a side-by-side comparison
     of random model outputs.
+
+    Please find sample prompts in [./data/open-questions.train.jsonl](./data/open-questions.train.jsonl).
+
+    We will release a set of test prompts on February 16, 2024.
+
+
 
 Submission
 ----------
