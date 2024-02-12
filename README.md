@@ -108,13 +108,14 @@ Important Dates
 ---------------
 
 January 15, 2024 — Shared task announcement\
-February 15, 2024 — Release of test data to registered participants\
-February 22, 2024 — Registration deadline\
-February 23, 2024 — Submission of system responses\
-March 1, 2024 — Shared Task paper due\
-March 7, 2024 — Results of the Shared Task announced\
-March 29, 2024 — Notification of acceptance\
-TBD (mid-April) — Camera-ready Shared Task papers due\
+February 12, 2024 — Second call for participation; release of train data\
+February 16, 2024 — Release of test data to registered participants\
+February 24, 2024 — Registration deadline; release of open questions\
+February 26, 2024 — Submission of system responses\
+March 4, 2024 — Results of the Shared Task announced\
+March 6, 2024 — Shared Task paper due\
+March 27, 2024 — Notification of acceptance\
+April 5, 2024 — Camera-ready Shared Task papers due\
 May 25, 2024 — Workshop date
 
 Contacts
