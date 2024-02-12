@@ -9,7 +9,7 @@ for LLM development in Slavic languages.
 
 Registration form: https://forms.gle/MiC7pWsWbwBdSmoX9
 
-Please register **by February 22, 2024** and join the discussions in Discord
+Please register **by February 24, 2024** and join the discussions in Discord
 via https://discord.gg/kCc6xgWbCJ.
 
 Updates
@@ -32,11 +32,12 @@ generating fluent and factually accurate responses.
 
 Instruction tuning may be complemented by various prompting strategies,
 like few-shot learning or chain-of-thought reasoning. You can also use
-retrieval augmented generation from open data sources.
+retrieval-augmented generation from open data sources.
 
 We encourage you to use any open external data of your choice
-(Wikipedia, textbooks, grammar books, etc.) except for the Ukrainian
-External Independent Evaluation.
+(Wikipedia, textbooks, grammar books, etc.). One exception: if you want
+to use data from the Ukrainian External Independent Evaluation (_ЗНО_),
+please use only the subset we release below.
 
 For an easy start with the competition, consider this guide on
 fine-tuning with Llama 2 using QLoRA:
@@ -55,17 +56,15 @@ We will evaluate your models on a hidden set of similar data.
 Data location: [`./data/zno.train.jsonl`](./data/zno.train.jsonl) or
 https://huggingface.co/datasets/osyvokon/zno
 
-This dataset contains machine-readable questions and answers from Ukrainian
-External independent testing (called _ЗНО_/_ZNO_ in Ukrainian).
+This dataset contains machine-readable questions and answers from the
+Ukrainian External Independent Evaluation (called _ЗНО_/_ZNO_ in Ukrainian).
 
-Question subjects are:
-
+The questions cover the following topics:
 - History of Ukraine
 - Ukrainian language and literature
 
-A training set contains 3063 question/answers. We will release a test set soon.
-
-Every line in a .jsonl file contains a structure like this:
+The training set contains 3,063 question/answers. Every line in a .jsonl file
+has the following structure:
 
 ```js
 {
@@ -85,21 +84,19 @@ Every line in a .jsonl file contains a structure like this:
 Currently, all questions have exactly one correct answer (`correct_answers[0]`).
 
 
-### 2. Open questions
+## 2. Open questions
 
 Data location: [`./data/open-questions.train.jsonl`](./data/open-questions.train.jsonl).
 
-This set of instruction prompts ask to perform a text generation tasks,
+This set contains instruction prompts for text generation tasks,
 like text summarization, short story and poem generation, adding
-explanations to sample text, question answering, and so on.
-questions will contain references to the history, culture, literature,
+explanations to a sample text, question answering, and so on.
+The questions contain references to the history, culture, literature,
 music, and geography of Ukraine, as well as cover multiple genres of
 writing.
 
-Those questions don't have a single correct answer. They will be
-used for manual side-by-side comparison of model outputs.
-
-A sample record from a provided JSON lines file:
+This set contains only 20 instruction prompts. A sample record from
+the provided .jsonl file has the following structure:
 
 ```json
 {
@@ -111,6 +108,8 @@ A sample record from a provided JSON lines file:
 
 `input` and `output` are currently empty and are provided for compatibility
 with the Alpaca dataset format.
+
+These questions don't have a single correct answer.
 
 
 Limitations
@@ -138,8 +137,8 @@ the following limitations:
 3.  The weights of the final model should be published on [the Hugging
     Face Hub](https://huggingface.co/) or a similar open platform.
 
-4.  If you're going to train on Ukrainian External Independent Evaluation ("ЗНО")
-    data, use [the provided data](./data/zno.train.jsonl) to avoid
+4.  If you're going to train on the Ukrainian External Independent Evaluation
+    (_ЗНО_) data, use [the provided data](./data/zno.train.jsonl) to avoid
     test set contamination.
 
 
@@ -149,8 +148,8 @@ Evaluation
 Model evaluation will be twofold:
 
 -   Automated evaluation — the **accuracy** of the model's answers to
-    multiple-choice questions. The questions are based on the Ukrainian
-    External Independent Evaluation tasks related to the topics of
+    the multiple-choice exam questions. The questions are based on the
+    Ukrainian External Independent Evaluation tasks related to the topics of
     Ukrainian history, language, and literature.
 
     We provide a sample of data that you can use for training and
@@ -169,7 +168,6 @@ Model evaluation will be twofold:
     Please find sample prompts in [./data/open-questions.train.jsonl](./data/open-questions.train.jsonl).
 
     We will release a set of test prompts on February 16, 2024.
-
 
 
 Submission
