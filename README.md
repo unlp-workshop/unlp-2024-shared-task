@@ -12,6 +12,13 @@ Registration form: https://forms.gle/MiC7pWsWbwBdSmoX9
 Please register **by February 22, 2024** and join the discussions in Discord
 via https://discord.gg/kCc6xgWbCJ.
 
+Updates
+-------
+
+**2024-02-12**:
+
+* Update important dates.
+
 Task description
 ----------------
 
