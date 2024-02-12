@@ -74,9 +74,13 @@ Model evaluation will be twofold:
     Ukrainian history, language, and literature. Please find sample
     questions in [llm-for-ua-sample.jsonl](data/llm-for-ua-sample.jsonl).
 
--   Human evaluation — **manual ratings** of text generation tasks,
+-   Human evaluation — **manual evaluation** of text generation tasks,
     like text summarization, short story and poem generation, adding
-    explanations to sample text, free chat.
+    explanations to sample text, question answering, free chat. Open
+    questions will contain references to the history, culture, literature,
+    music, and geography of Ukraine, as well as cover multiple genres of
+    writing. The evaluation will be organized as a side-by-side comparison
+    of random model outputs.
 
 Submission
 ----------
