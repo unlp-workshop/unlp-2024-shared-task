@@ -39,11 +39,11 @@ We encourage you to use any open external data of your choice
 to use data from the Ukrainian External Independent Evaluation (_ЗНО_),
 please use only the subset we release below.
 
-For an easy start with the competition, consider this guide on
-fine-tuning with Llama 2 using QLoRA:
+For an easy start with the data, consider the Ukrainian part of
+the [aya_dataset](https://huggingface.co/datasets/CohereForAI/aya_dataset).
 
-* https://www.kaggle.com/code/philculliton/fine-tuning-with-llama-2-qlora
-
+For an easy start with the model, consider [this guide](https://www.kaggle.com/code/philculliton/fine-tuning-with-llama-2-qlora) on fine-tuning with
+Llama 2 using QLoRA.
 
 Datasets
 --------
@@ -118,7 +118,7 @@ Limitations
 To ensure fair competition with reproducible results, please adhere to
 the following limitations:
 
-1.  Only LLMs with open weights such as Llama-2, Mistral, Phi-2, etc.
+1.  Only LLMs with open weights such as Llama 2, Mistral, Phi-2, Aya 101, etc.
     are allowed for the shared task.
 
 2.  The model should be able to run on GPU with 16GB VRAM and CUDA
