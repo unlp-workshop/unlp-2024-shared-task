@@ -15,6 +15,11 @@ via https://discord.gg/kCc6xgWbCJ.
 Updates
 -------
 
+**2024-03-03**:
+
+* Release test data for [exam questions](./data/zno.test.jsonl).
+* Release test data for [open questions](./data/open-questions.test.jsonl).
+
 **2024-02-12**:
 
 * Update important dates.
@@ -155,7 +160,7 @@ Model evaluation will be twofold:
     We provide a sample of data that you can use for training and
     validating your model: [./data/zno.train.jsonl](./data/zno.train.jsonl).
 
-    The test data is to be released on February 16, 2024.
+    Test data is in [./data/zno.test.jsonl](./data/zno.test.jsonl).
 
 -   Human evaluation — **manual evaluation** of text generation tasks,
     like text summarization, short story and poem generation, adding
@@ -167,7 +172,7 @@ Model evaluation will be twofold:
 
     Please find sample prompts in [./data/open-questions.train.jsonl](./data/open-questions.train.jsonl).
 
-    We will release a set of test prompts on February 16, 2024.
+    Prompt used for final human evaluation are in [./data/open-questions.test.jsonl](./data/open-questions.test.jsonl)
 
 
 Submission
