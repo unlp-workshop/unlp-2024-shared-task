@@ -18,17 +18,17 @@ Goals of the shared task:
 We prepared a test set with a hundred open questions for the participants of the shared task. In addition to questions about Ukraine, the Ukrainian language, culture, history, etc., the test set also included instructions to generate a certain type of text. Examples of questions in the test set:
 
     Розкажи сюжет казки "Котик і Півник".  
-    _Transl: Tell me the plot of the fairy tale "The Cat and the Rooster"._
+    Transl: Tell me the plot of the fairy tale "The Cat and the Rooster".
     
     Дніпро — це річка чи місто?
-    _Transl: Is Dnipro a river or a city?_
+    Transl: Is Dnipro a river or a city?
     
     Ось текст:
     ```Сіється сніг. В дерев'яній клітці здоровенний тигр роззявив пащу, реве. Збоку стоять чотири мисливці, виструнчившись перед оком апарата, спираючись на рушниці. Один старий мисливець і три молодих. Всі в чуднім одязі — в шкіряних штанях, химерних, у шкіряних піджаках, підперезані набійнищями. Три в шапочках, один — без. І той "без" — Наталка! Так, Наталка! Стоїть, спершись на вінчестер, дивиться насмішкувато. Вуста міцно стулені, очі примружені, голова непокрита, і на неї падають сніжинки...```
     Скільки мисливців було в тексті?
-    _Transl: Here's a text: ```<excerpt from "Tiger Trappers" by Ivan Bahrianyi>``` How many hunters were there in the text?
+    Transl: Here's a text: ```<excerpt from "Tiger Trappers" by Ivan Bahrianyi>``` How many hunters were there in the text?
 
-We received six submissions with answers to the open questions from different LLMs, and now we need to determine which one works best with the Ukrainian language.
+We received six submissions with answers to the open questions from different LLMs, and now we need to determine which model works best with the Ukrainian language.
 
 ## The task
 
@@ -59,4 +59,4 @@ Below are the prioritized criteria for evaluation:
 
 We are incredibly grateful for your time and for helping to develop tools for processing the Ukrainian language ❤️
 
-Write your questions, comments and wishes in the chat! 
+Write your questions, comments, and wishes in the chat! 

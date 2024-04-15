@@ -11,8 +11,9 @@ The task was held from January 15 till March 4, 2024. See the [results](#results
 stay tuned for the full report on the shared task to be published at
 UNLP 2024.
 
-The [Codabench environment](https://www.codabench.org/competitions/2046/](https://www.codabench.org/competitions/2046/) remains open for further submissions, although
+The [Codabench environment](https://www.codabench.org/competitions/2046/) remains open for further submissions, although
 any such submissions will be considered outside of the UNLP 2024 competition.
+
 Join the discussions in Discord via https://discord.gg/kCc6xgWbCJ.
 
 Updates
@@ -189,7 +190,7 @@ Model evaluation is twofold:
 
     Please find sample prompts in [./data/open-questions.train.jsonl](./data/open-questions.train.jsonl).
 
-    A hundred open questions used for final human evaluation are
+    A hundred open questions used for the final human evaluation are
     in [./data/open-questions.test.jsonl](./data/open-questions.test.jsonl)
 
     We collected more than 300 responses for each competing model and used
@@ -216,9 +217,7 @@ The First Shared Task on Fine-Tuning LLMs for Ukrainian is officially closed!
 ⭐ The winner in the open question task is Sherlock (no RAG) beating other solutions with 26.77 TrueSkill rating!
 
 
-<img src="exam-questions-leaderboard.png" alt="Exam questions leaderboard"/>
-
-<img src="open-questions-leaderboard.png" alt="Open questions leaderboard"/>
+<img src="./img/exam-questions-leaderboard.png" alt="Exam questions leaderboard" width=300/>   <img src="./img/open-questions-leaderboard.png" alt="Open questions leaderboard" width=300/>
 
 Full report on the shared task — TBD.
 
