@@ -7,13 +7,25 @@ organizes the first Shared Task on Fine-Tuning Large Language Models
 LLMs' capabilities to understand and generate Ukrainian, paving the way
 for LLM development in Slavic languages.
 
-Registration form: https://forms.gle/MiC7pWsWbwBdSmoX9
+The task was held from January 15 till March 4, 2024. See the [results](#results) and
+stay tuned for the full report on the shared task to be published at
+UNLP 2024.
 
-Please register **by February 24, 2024** and join the discussions in Discord
-via https://discord.gg/kCc6xgWbCJ.
+The [Codabench environment](https://www.codabench.org/competitions/2046/](https://www.codabench.org/competitions/2046/) remains open for further submissions, although
+any such submissions will be considered outside of the UNLP 2024 competition.
+Join the discussions in Discord via https://discord.gg/kCc6xgWbCJ.
 
 Updates
 -------
+
+**2024-04-15**:
+
+* Add annotation guidelines in [Ukrainian](./annotation/guidelines-uk.md).
+* Add annotation guidelines in [English](./annotation/guidelines-en.md).
+
+**2024-03-04**:
+
+* [Results](#results) of the shared task announced.
 
 **2024-03-03**:
 
@@ -150,7 +162,7 @@ the following limitations:
 Evaluation
 ----------
 
-Model evaluation will be twofold:
+Model evaluation is twofold:
 
 -   Automated evaluation — the **accuracy** of the model's answers to
     the multiple-choice exam questions. The questions are based on the
@@ -160,25 +172,30 @@ Model evaluation will be twofold:
     We provide a sample of data that you can use for training and
     validating your model: [./data/zno.train.jsonl](./data/zno.train.jsonl).
 
-    Test data is in [./data/zno.test.jsonl](./data/zno.test.jsonl).
+    Test data (751 multiple-choice questions) is in [./data/zno.test.jsonl](./data/zno.test.jsonl).
+
+    The Codabench space for submitting the results can be found at
+    [https://www.codabench.org/competitions/2046/](https://www.codabench.org/competitions/2046/).
+
+    We used the accuracy metric to rank the competing LLM solutions.
 
 -   Human evaluation — **manual evaluation** of text generation tasks,
     like text summarization, short story and poem generation, adding
     explanations to sample text, question answering, free chat. Open
-    questions will contain references to the history, culture, literature,
+    questions contain references to the history, culture, literature,
     music, and geography of Ukraine, as well as cover multiple genres of
-    writing. The evaluation will be organized as a side-by-side comparison
+    writing. The evaluation was organized as a side-by-side comparison
     of random model outputs.
 
     Please find sample prompts in [./data/open-questions.train.jsonl](./data/open-questions.train.jsonl).
 
-    Prompt used for final human evaluation are in [./data/open-questions.test.jsonl](./data/open-questions.test.jsonl)
+    A hundred open questions used for final human evaluation are
+    in [./data/open-questions.test.jsonl](./data/open-questions.test.jsonl)
 
+    We collected more than 300 responses for each competing model and used
+    the TrueSkill ranking system to define the winner. The annotation
+    guidelines used for the side-by-side evaluation can be found [here](./annotation/guidelines-uk.md).
 
-Submission
-----------
-
-TBD
 
 Baselines
 ---------
@@ -188,6 +205,23 @@ a very simple (and useless) baseline that always answers with the first
 choice. This script contains code to load the dataset and to generate a
 sample prompt. Use it to get the idea behind the data structure and
 automated evaluation.
+
+Results
+----------
+
+The First Shared Task on Fine-Tuning LLMs for Ukrainian is officially closed!
+
+⭐ The winner in the exam task is Sherlock (RAG) achieving the accuracy of 0.49!
+
+⭐ The winner in the open question task is Sherlock (no RAG) beating other solutions with 26.77 TrueSkill rating!
+
+
+<img src="exam-questions-leaderboard.png" alt="Exam questions leaderboard"/>
+
+<img src="open-questions-leaderboard.png" alt="Open questions leaderboard"/>
+
+Full report on the shared task — TBD.
+
 
 Publication
 -----------

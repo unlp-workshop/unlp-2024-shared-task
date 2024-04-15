@@ -1,5 +1,7 @@
 # Інструкція для оцінювання якості моделей на змаганні UNLP-2024
 
+English version: [guidelines-en.md](guidelines-en.md).
+
 Чат помічників: https://t.me/+fzZDVJuKLnNiYTcy.
 
 Організатори: @mariana_scorp (Мар’яна Романишин), @Salad_g (Роман Кислий), @osyvokon (Олексій Сивоконь).
