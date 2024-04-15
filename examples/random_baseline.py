@@ -23,7 +23,7 @@ from dataclasses import dataclass
 class Choice:
     marker: str
     text: str
-    group: str   # Unused for now
+    # group: str   # Unused for now
 
 
 @dataclass
@@ -37,9 +37,9 @@ class Task:
     def from_dict(data: dict) -> "Task":
         return Task(
             question=data["question"],
-            choices=[Choice(**choice) for choice in data["choices"]],
+            choices=[Choice(**choice) for choice in data["answers"]],
             correct_answers=data["correct_answers"],
-            source=data["source"],
+            source=data["subject"],
         )
 
 
@@ -66,7 +66,7 @@ def predict(dataset: list[Task], *, verbose=True) -> list[str]:
 
 
 def make_prompt(task: Task) -> str:
-    """Make a LLM prompt for the given task."""
+    """Make an LLM prompt for the given task."""
 
     prompt_template = textwrap.dedent(
         """\
@@ -102,7 +102,7 @@ def format_extra_instructions(task: Task) -> str:
             range_hint = f" ({task.choices[0].marker}-{task.choices[-1].marker})"
         else:
             range_hint = ""
-        instructions = f"Вкажіть правильну відповідь{range_hint}."
+        instructions = f"Вкажіть першу літеру правильної відповіді{range_hint} або '-', якщо відповісти літерою неможливо."
 
     else:
         # Multiple-choice and open questions are not supported yet
